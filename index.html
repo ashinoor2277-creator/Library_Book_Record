@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Book Record</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                📚
+                <span>Library</span>
+            </div>
+
+            <nav>
+                <a href="#" class="active">🏠 Dashboard</a>
+                <a href="#">📖 Books</a>
+                <a href="#">➕ Add Book</a>
+                <a href="#">🔍 Search</a>
+                <a href="#">⚙️ Settings</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>Library Management</p>
+                <small>Student Project</small>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="header">
+
+                <div>
+                    <h1>Library Book Record</h1>
+                    <p>Manage your library books easily and efficiently.</p>
+                </div>
+
+                <div class="profile">
+                    <span>🔔</span>
+                    <div class="avatar">A</div>
+                    <span>Ayesha</span>
+                </div>
+
+            </header>
+
+
+            <!-- Welcome Section -->
+            <section class="welcome">
+
+                <div>
+                    <h2>Welcome back! 👋</h2>
+                    <p>Keep your library records organized in one place.</p>
+                </div>
+
+                <div class="book-icon">
+                    📚
+                </div>
+
+            </section>
+
+
+            <!-- Statistics -->
+            <section class="stats">
+
+                <div class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <div>
+                        <h3 id="totalBooks">0</h3>
+                        <p>Total Books</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🟢</div>
+                    <div>
+                        <h3 id="availableBooks">0</h3>
+                        <p>Available</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🔴</div>
+                    <div>
+                        <h3 id="issuedBooks">0</h3>
+                        <p>Issued</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📂</div>
+                    <div>
+                        <h3 id="categories">0</h3>
+                        <p>Categories</p>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- Add Book -->
+            <section class="card">
+
+                <div class="card-heading">
+                    <div>
+                        <h2>➕ Add New Book</h2>
+                        <p>Enter the details of the new book.</p>
+                    </div>
+                </div>
+
+                <form id="bookForm">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="bookId">Book ID</label>
+                            <input
+                                type="text"
+                                id="bookId"
+                                placeholder="e.g. B001"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bookTitle">Book Title</label>
+                            <input
+                                type="text"
+                                id="bookTitle"
+                                placeholder="Enter book title"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="author">Author</label>
+                            <input
+                                type="text"
+                                id="author"
+                                placeholder="Enter author name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category">Category</label>
+
+                            <select id="category" required>
+
+                                <option value="">Select category</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Programming">Programming</option>
+                                <option value="Database">Database</option>
+                                <option value="Mathematics">Mathematics</option>
+                                <option value="Science">Science</option>
+                                <option value="Other">Other</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="status">Book Status</label>
+
+                            <select id="status">
+
+                                <option value="Available">Available</option>
+                                <option value="Issued">Issued</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="form-button">
+
+                            <button type="submit">
+                                ➕ Add Book
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- Search -->
+            <section class="search-section">
+
+                <div class="search-box">
+
+                    <span>🔍</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search books by title, author or category..."
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- Book Table -->
+            <section class="card">
+
+                <div class="card-heading">
+
+                    <div>
+                        <h2>📖 Book Records</h2>
+                        <p>All books currently stored in the library.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>ID</th>
+                                <th>Book Title</th>
+                                <th>Author</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="bookTable">
+
+                            <!-- Books will appear here -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- Footer -->
+            <footer>
+
+                <p>© 2026 Library Book Record | Student DevOps Project</p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
