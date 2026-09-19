@@ -18,8 +18,8 @@ jobs:
         run: |
           test -f index.html
           test -f style.css
-          test -f script.js
-
+         // test -f script.js
+          test -f wrong-script.js
       - name: Check HTML and JavaScript references
         run: |
           grep -q 'style.css' index.html
