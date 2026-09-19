@@ -488,6 +488,22 @@ footer {
     }
 }
 
+.clear-btn {
+    background: #eef2f7;
+    color: #344054;
+    border: 1px solid #d0d5dd;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.clear-btn:hover {
+    background: #e2e8f0;
+}
 
 @media (max-width: 700px) {
 
