@@ -4,8 +4,8 @@
 
 
 // Store all books in an array
-let books = [];
-
+//let books = [];
+let books = JSON.parse(localStorage.getItem("libraryBooks")) || [];
 
 // Get elements from HTML
 const bookForm = document.getElementById("bookForm");
@@ -60,6 +60,7 @@ bookForm.addEventListener("submit", function(event) {
     // Add book to array
     books.push(newBook);
 
+saveBooks();
 
     // Display books
     displayBooks(books);
@@ -171,7 +172,7 @@ function deleteBook(bookId) {
         return book.id !== bookId;
     });
 
-
+saveBooks();
     // Display updated books
     displayBooks(books);
 
@@ -181,6 +182,9 @@ function deleteBook(bookId) {
 
 }
 
+function saveBooks() {
+    localStorage.setItem("libraryBooks", JSON.stringify(books));
+}
 
 // ========================================
 // UPDATE STATISTICS
